@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Screeplot for Principal Components</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggscreeplot {ggbiplot}"><tr><td>ggscreeplot {ggbiplot}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Screeplot for Principal Components</h2>
+
+<h3>Description</h3>
+
+<p>Screeplot for Principal Components
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  ggscreeplot(pcobj, type = c("pev", "cev"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pcobj</code></td>
+<td>
+<p>an object returned by prcomp() or
+princomp()</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>the type of scree plot.  'pev' corresponds
+proportion of explained variance, i.e. the eigenvalues
+divided by the trace. 'cev' corresponds to the cumulative
+proportion of explained variance, i.e. the partial sum of
+the first k eigenvalues divided by the trace.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(wine)
+wine.pca &lt;- prcomp(wine, scale. = TRUE)
+print(ggscreeplot(wine.pca))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>ggbiplot</em> version 0.55 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Chemical composition of three cultivars of wine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for wine {ggbiplot}"><tr><td>wine {ggbiplot}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>
+Chemical composition of three cultivars of wine
+</h2>
+
+<h3>Description</h3>
+
+<p>Chemical constituents of wines from three different cultivars grown in the same region in Italy.  The cultivars,
+'barolo', 'barbera', and 'grignolino', are indicated in wine.class.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(wine)</pre>
+
+
+<h3>Format</h3>
+
+<p>The format is:
+chr &quot;wine&quot;
+</p>
+
+
+<h3>Source</h3>
+
+<p>http://archive.ics.uci.edu/ml/datasets/Wine
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(wine)
+wine.pca &lt;- prcomp(wine, scale. = TRUE)
+print(ggscreeplot(wine.pca))                                               
+print(ggbiplot(wine.pca, obs.scale = 1, var.scale = 1, groups = wine.class, ellipse = TRUE, circle = TRUE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>ggbiplot</em> version 0.55 <a href="00Index.html">Index</a>]</div>
+</body></html>

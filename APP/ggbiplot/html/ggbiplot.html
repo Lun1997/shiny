@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Biplot for Principal Components using ggplot2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ggbiplot {ggbiplot}"><tr><td>ggbiplot {ggbiplot}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Biplot for Principal Components using ggplot2</h2>
+
+<h3>Description</h3>
+
+<p>Biplot for Principal Components using ggplot2
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  ggbiplot(pcobj, choices = 1:2, scale = 1, pc.biplot =
+  TRUE, obs.scale = 1 - scale, var.scale = scale, groups =
+  NULL, ellipse = FALSE, ellipse.prob = 0.68, labels =
+  NULL, labels.size = 3, alpha = 1, var.axes = TRUE, circle
+  = FALSE, circle.prob = 0.69, varname.size = 3,
+  varname.adjust = 1.5, varname.abbrev = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pcobj</code></td>
+<td>
+<p>an object returned by prcomp() or
+princomp()</p>
+</td></tr>
+<tr valign="top"><td><code>choices</code></td>
+<td>
+<p>which PCs to plot</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>covariance biplot (scale = 1), form biplot
+(scale = 0). When scale = 1, the inner product between
+the variables approximates the covariance and the
+distance between the points approximates the Mahalanobis
+distance.</p>
+</td></tr>
+<tr valign="top"><td><code>obs.scale</code></td>
+<td>
+<p>scale factor to apply to observations</p>
+</td></tr>
+<tr valign="top"><td><code>var.scale</code></td>
+<td>
+<p>scale factor to apply to variables</p>
+</td></tr>
+<tr valign="top"><td><code>pc.biplot</code></td>
+<td>
+<p>for compatibility with
+biplot.princomp()</p>
+</td></tr>
+<tr valign="top"><td><code>groups</code></td>
+<td>
+<p>optional factor variable indicating the
+groups that the observations belong to. If provided the
+points will be colored according to groups</p>
+</td></tr>
+<tr valign="top"><td><code>ellipse</code></td>
+<td>
+<p>draw a normal data ellipse for each
+group?</p>
+</td></tr>
+<tr valign="top"><td><code>ellipse.prob</code></td>
+<td>
+<p>size of the ellipse in Normal
+probability</p>
+</td></tr>
+<tr valign="top"><td><code>labels</code></td>
+<td>
+<p>optional vector of labels for the
+observations</p>
+</td></tr>
+<tr valign="top"><td><code>labels.size</code></td>
+<td>
+<p>size of the text used for the labels</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>alpha transparency value for the points (0 =
+TRUEransparent, 1 = opaque)</p>
+</td></tr>
+<tr valign="top"><td><code>circle</code></td>
+<td>
+<p>draw a correlation circle? (only applies
+when prcomp was called with scale = TRUE and when
+var.scale = 1)</p>
+</td></tr>
+<tr valign="top"><td><code>var.axes</code></td>
+<td>
+<p>draw arrows for the variables?</p>
+</td></tr>
+<tr valign="top"><td><code>varname.size</code></td>
+<td>
+<p>size of the text for variable names</p>
+</td></tr>
+<tr valign="top"><td><code>varname.adjust</code></td>
+<td>
+<p>adjustment factor the placement of
+the variable names, &gt;= 1 means farther from the arrow</p>
+</td></tr>
+<tr valign="top"><td><code>varname.abbrev</code></td>
+<td>
+<p>whether or not to abbreviate the
+variable names</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>a ggplot2 plot
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(wine)
+wine.pca &lt;- prcomp(wine, scale. = TRUE)
+print(ggbiplot(wine.pca, obs.scale = 1, var.scale = 1, groups = wine.class, ellipse = TRUE, circle = TRUE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>ggbiplot</em> version 0.55 <a href="00Index.html">Index</a>]</div>
+</body></html>
